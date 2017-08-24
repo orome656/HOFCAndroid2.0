@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_actus"
+            android:icon="@drawable/ic_newspaper"
+            android:title="Actualités" />
+    </group>
+
+    <item android:title="Calendriers">
+        <menu>
+            <item
+                android:id="@+id/nav_calendar_team1"
+                android:icon="@drawable/ic_calendar"
+                android:title="Equipe 1" />
+            <item
+                android:id="@+id/nav_calendar_team2"
+                android:icon="@drawable/ic_calendar"
+                android:title="Equipe 2" />
+            <item
+                android:id="@+id/nav_calendar_team3"
+                android:icon="@drawable/ic_calendar"
+                android:title="Equipe 3" />
+        </menu>
+    </item>
+    <item android:title="Agenda">
+        <menu>
+            <item
+                android:id="@+id/nav_agenda_previous_week"
+                android:icon="@drawable/ic_calendar"
+                android:title="Semaine dernière" />
+            <item
+                android:id="@+id/nav_agenda_current_week"
+                android:icon="@drawable/ic_calendar"
+                android:title="Cette semaine" />
+            <item
+                android:id="@+id/nav_agenda_next_week"
+                android:icon="@drawable/ic_calendar"
+                android:title="Semaine prochaine" />
+        </menu>
+    </item>
+    <item android:title="Classements">
+        <menu>
+            <item
+                android:id="@+id/nav_rank_team1"
+                android:icon="@drawable/ic_format_list_numbers"
+                android:title="Semaine dernière" />
+            <item
+                android:id="@+id/nav_rank_team2"
+                android:icon="@drawable/ic_format_list_numbers"
+                android:title="Cette semaine" />
+            <item
+                android:id="@+id/nav_rank_team3"
+                android:icon="@drawable/ic_format_list_numbers"
+                android:title="Semaine prochaine" />
+        </menu>
+    </item>
+    <item android:title="Journées">
+        <menu>
+            <item
+                android:id="@+id/nav_matchday_team1"
+                android:icon="@drawable/ic_calendar"
+                android:title="Semaine dernière" />
+            <item
+                android:id="@+id/nav_matchday_team2"
+                android:icon="@drawable/ic_calendar"
+                android:title="Cette semaine" />
+            <item
+                android:id="@+id/nav_matchday_team3"
+                android:icon="@drawable/ic_calendar"
+                android:title="Semaine prochaine" />
+        </menu>
+    </item>
+
+</menu>
