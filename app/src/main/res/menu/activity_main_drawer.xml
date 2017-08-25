@@ -7,71 +7,71 @@
         <item
             android:id="@+id/nav_actus"
             android:icon="@drawable/ic_newspaper"
-            android:title="Actualités" />
+            android:title="@string/menu_news" />
     </group>
 
-    <item android:title="Calendriers">
+    <item android:title="@string/menu_calendar">
         <menu>
             <item
                 android:id="@+id/nav_calendar_team1"
                 android:icon="@drawable/ic_calendar"
-                android:title="Equipe 1" />
+                android:title="@string/equipe1" />
             <item
                 android:id="@+id/nav_calendar_team2"
                 android:icon="@drawable/ic_calendar"
-                android:title="Equipe 2" />
+                android:title="@string/equipe2" />
             <item
                 android:id="@+id/nav_calendar_team3"
                 android:icon="@drawable/ic_calendar"
-                android:title="Equipe 3" />
+                android:title="@string/equipe3" />
         </menu>
     </item>
-    <item android:title="Agenda">
+    <item android:title="@string/menu_agenda">
         <menu>
             <item
                 android:id="@+id/nav_agenda_previous_week"
                 android:icon="@drawable/ic_calendar"
-                android:title="Semaine dernière" />
+                android:title="@string/previous_week" />
             <item
                 android:id="@+id/nav_agenda_current_week"
                 android:icon="@drawable/ic_calendar"
-                android:title="Cette semaine" />
+                android:title="@string/current_week" />
             <item
                 android:id="@+id/nav_agenda_next_week"
                 android:icon="@drawable/ic_calendar"
-                android:title="Semaine prochaine" />
+                android:title="@string/next_week" />
         </menu>
     </item>
-    <item android:title="Classements">
+    <item android:title="@string/menu_ranks">
         <menu>
             <item
                 android:id="@+id/nav_rank_team1"
                 android:icon="@drawable/ic_format_list_numbers"
-                android:title="Semaine dernière" />
+                android:title="@string/equipe1" />
             <item
                 android:id="@+id/nav_rank_team2"
                 android:icon="@drawable/ic_format_list_numbers"
-                android:title="Cette semaine" />
+                android:title="@string/equipe2" />
             <item
                 android:id="@+id/nav_rank_team3"
                 android:icon="@drawable/ic_format_list_numbers"
-                android:title="Semaine prochaine" />
+                android:title="@string/equipe3" />
         </menu>
     </item>
-    <item android:title="Journées">
+    <item android:title="@string/menu_matchday">
         <menu>
             <item
                 android:id="@+id/nav_matchday_team1"
                 android:icon="@drawable/ic_calendar"
-                android:title="Semaine dernière" />
+                android:title="@string/equipe1" />
             <item
                 android:id="@+id/nav_matchday_team2"
                 android:icon="@drawable/ic_calendar"
-                android:title="Cette semaine" />
+                android:title="@string/equipe2" />
             <item
                 android:id="@+id/nav_matchday_team3"
                 android:icon="@drawable/ic_calendar"
-                android:title="Semaine prochaine" />
+                android:title="@string/equipe3" />
         </menu>
     </item>
 

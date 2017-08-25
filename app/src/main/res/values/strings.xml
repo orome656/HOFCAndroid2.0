@@ -5,4 +5,21 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="equipe1">Equipe 1</string>
+    <string name="equipe2">Equipe 2</string>
+    <string name="equipe3">Equipe 3</string>
+
+    <string name="current_week">Cette semaine</string>
+    <string name="next_week">Semaine prochaine</string>
+    <string name="previous_week">Semaine dernière</string>
+
+    <string name="menu_news">Actualités</string>
+    <string name="menu_calendar">Calendriers</string>
+    <string name="menu_agenda">Agendas</string>
+    <string name="menu_ranks">Classements</string>
+    <string name="menu_matchday">Journées</string>
+    <string name="header_text">HOFC App</string>
+    <string name="header_image_content_description">Header image</string>
+
 </resources>
