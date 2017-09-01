@@ -6,6 +6,7 @@ import com.hofc.hofc.database.ActuDao
 import com.hofc.hofc.database.HOFCDatabase
 import com.hofc.hofc.repositories.ActuRepository
 import com.hofc.hofc.services.IRestService
+import com.hofc.hofc.viewmodels.ViewModelFactory
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -15,7 +16,7 @@ import javax.inject.Singleton
 /**
  * Created by maladota on 01/09/2017.
  */
-@Module
+@Module(includes = arrayOf(ViewModelModule::class))
 class AppModule {
     @Provides
     @Singleton
