@@ -17,8 +17,10 @@ class ActuAdapter: RecyclerView.Adapter<ActuAdapter.ActuViewHolder>() {
     var actusList: List<Actu>?
         get() = _actusList
         set(value) {
-            _actusList = value
-            notifyItemRangeInserted(0, value!!.size)
+            if(_actusList == null) {
+                _actusList = value
+                notifyItemRangeInserted(0, value!!.size)
+            }
         }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ActuViewHolder {
