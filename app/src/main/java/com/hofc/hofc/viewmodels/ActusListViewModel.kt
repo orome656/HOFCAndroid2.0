@@ -10,8 +10,15 @@ import javax.inject.Inject
 /**
  * Created by maladota on 31/08/2017.
  */
-class ActusListViewModel @Inject constructor(val actuRepository: ActuRepository): ViewModel() {
+class ActusListViewModel: ViewModel {
+    private lateinit var actuRepository: ActuRepository
+
     private var actus: LiveData<List<Actu>>? = null
+
+    constructor(): super() {
+        actuRepository = ActuRepository()
+    }
+
     fun getActus(): LiveData<List<Actu>>? {
         if(actus == null)
             actus = actuRepository.getActus()

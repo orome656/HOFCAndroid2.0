@@ -13,8 +13,6 @@ import com.hofc.hofc.R
 import com.hofc.hofc.adapters.ActuAdapter
 import com.hofc.hofc.databinding.ActusListBinding
 import com.hofc.hofc.models.Actu
-import com.hofc.hofc.viewmodels.ViewModelFactory
-import javax.inject.Inject
 
 /**
  * Created by maladota on 31/08/2017.
@@ -26,12 +24,9 @@ class ActusListFragment: LifecycleFragment() {
     private var mBinding: ActusListBinding? = null
     private var mActuAdapter: ActuAdapter? = null
 
-    @Inject
-    lateinit var mViewModelFactory: ViewModelFactory
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        actusListViewModel = ViewModelProviders.of(this, mViewModelFactory).get(ActusListViewModel::class.java)
+        actusListViewModel = ViewModelProviders.of(this).get(ActusListViewModel::class.java)
 
         subscribeUi(actusListViewModel!!)
     }
