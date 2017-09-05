@@ -36,7 +36,7 @@ class ActuAdapter: RecyclerView.Adapter<ActuAdapter.ActuViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return actusList!!.size
+        return if(actusList != null) actusList!!.size else 0
     }
 
     class ActuViewHolder(val binding: ActuItemBinding): RecyclerView.ViewHolder(binding.root)

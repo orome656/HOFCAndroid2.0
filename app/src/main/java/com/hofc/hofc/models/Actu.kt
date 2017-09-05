@@ -10,7 +10,7 @@ import java.util.*
 @Entity
 data class Actu (
     @PrimaryKey
-    val postId: Int,
+    val postid: Int,
     val titre: String,
     val texte: String,
     val url: String,

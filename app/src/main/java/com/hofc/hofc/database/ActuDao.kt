@@ -16,7 +16,7 @@ interface ActuDao {
     @Insert(onConflict =  OnConflictStrategy.REPLACE)
     fun save(actu: Actu)
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun bulkSave(actus: List<Actu>)
 
     @Query("SELECT * FROM actu")
