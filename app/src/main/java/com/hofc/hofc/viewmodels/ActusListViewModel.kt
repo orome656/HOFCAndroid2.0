@@ -11,7 +11,7 @@ import javax.inject.Inject
  * Created by maladota on 31/08/2017.
  */
 class ActusListViewModel: ViewModel {
-    private lateinit var actuRepository: ActuRepository
+    private var actuRepository: ActuRepository
 
     private var actus: LiveData<List<Actu>>? = null
 

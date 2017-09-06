@@ -6,13 +6,15 @@ import android.arch.persistence.room.RoomDatabase
 import android.arch.persistence.room.TypeConverters
 import android.content.Context
 import com.hofc.hofc.database.converters.DateConverter
+import com.hofc.hofc.database.converters.VoteStatutConverter
 import com.hofc.hofc.models.Actu
+import com.hofc.hofc.models.Match
 
 /**
  * Created by maladota on 01/09/2017.
  */
-@Database(entities = arrayOf(Actu::class), version = 1)
-@TypeConverters(DateConverter::class)
+@Database(entities = arrayOf(Actu::class, Match::class), version = 1)
+@TypeConverters(DateConverter::class, VoteStatutConverter::class)
 abstract class HOFCDatabase: RoomDatabase() {
     companion object {
         private val DATABASE_NAME = "HOFC"
@@ -33,4 +35,6 @@ abstract class HOFCDatabase: RoomDatabase() {
         }
     }
     abstract fun actuDao(): ActuDao
+
+    abstract fun matchDao(): MatchDao
 }
