@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import com.hofc.hofc.databinding.ActuItemBinding
 import com.hofc.hofc.models.Actu
 import com.hofc.hofc.R
+import com.hofc.hofc.callbacks.ActuClickCallback
 
 /**
  * Created by maladota on 01/09/2017.
  */
-class ActuAdapter: RecyclerView.Adapter<ActuAdapter.ActuViewHolder>() {
+class ActuAdapter(val actuClickCallback: ActuClickCallback): RecyclerView.Adapter<ActuAdapter.ActuViewHolder>() {
     var _actusList: List<Actu>? = null
 
     var actusList: List<Actu>?
@@ -28,6 +29,8 @@ class ActuAdapter: RecyclerView.Adapter<ActuAdapter.ActuViewHolder>() {
                 R.layout.actu_item,
                 parent,
                 false)
+
+        binding.callback = actuClickCallback
 
         return ActuViewHolder(binding)
     }
