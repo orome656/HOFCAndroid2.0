@@ -14,16 +14,10 @@ class HOFCApplication: android.app.Application() {
         }
     }
 
-    var appComponent: AppComponent? = null
-
     override fun onCreate() {
         super.onCreate()
 
         application = this
 
-        appComponent = DaggerAppComponent.builder()
-                .contextModule(ContextModule(applicationContext))
-                .appModule(AppModule())
-                .build()
     }
 }

@@ -1,11 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="actu"
             type="com.hofc.hofc.models.Actu"/>
+        <variable
+            name="callback"
+            type="com.hofc.hofc.callbacks.ActuClickCallback" />
     </data>
-    <android.support.v7.widget.CardView>
-
+    <android.support.v7.widget.CardView
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="4dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:onClick="@{() -> callback.onClick(actu)}">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:bindImage="@{actu.image}"
+                />
+            <TextView
+                android:layout_marginTop="-30dp"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{actu.titre}"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{actu.texte}"
+                android:layout_margin="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{actu.formattedDate}"
+                android:textAlignment="textEnd"
+                android:layout_gravity="end"
+                android:layout_margin="10dp"/>
+        </LinearLayout>
     </android.support.v7.widget.CardView>
 </layout>

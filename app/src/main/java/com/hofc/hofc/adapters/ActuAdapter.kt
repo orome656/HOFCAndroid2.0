@@ -7,18 +7,21 @@ import android.view.ViewGroup
 import com.hofc.hofc.databinding.ActuItemBinding
 import com.hofc.hofc.models.Actu
 import com.hofc.hofc.R
+import com.hofc.hofc.callbacks.ActuClickCallback
 
 /**
  * Created by maladota on 01/09/2017.
  */
-class ActuAdapter: RecyclerView.Adapter<ActuAdapter.ActuViewHolder>() {
+class ActuAdapter(val actuClickCallback: ActuClickCallback): RecyclerView.Adapter<ActuAdapter.ActuViewHolder>() {
     var _actusList: List<Actu>? = null
 
     var actusList: List<Actu>?
         get() = _actusList
         set(value) {
-            _actusList = value
-            notifyItemRangeInserted(0, value!!.size)
+            if(_actusList == null) {
+                _actusList = value
+                notifyItemRangeInserted(0, value!!.size)
+            }
         }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ActuViewHolder {
@@ -26,6 +29,8 @@ class ActuAdapter: RecyclerView.Adapter<ActuAdapter.ActuViewHolder>() {
                 R.layout.actu_item,
                 parent,
                 false)
+
+        binding.callback = actuClickCallback
 
         return ActuViewHolder(binding)
     }
@@ -36,7 +41,7 @@ class ActuAdapter: RecyclerView.Adapter<ActuAdapter.ActuViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return actusList!!.size
+        return if(actusList != null) actusList!!.size else 0
     }
 
     class ActuViewHolder(val binding: ActuItemBinding): RecyclerView.ViewHolder(binding.root)
