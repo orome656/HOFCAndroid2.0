@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import com.hofc.hofc.fragments.ActusListFragment
+import com.hofc.hofc.fragments.CalendrierFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
@@ -65,7 +66,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 // Navigation vers actus
             }
             R.id.nav_calendar_team1 -> {
-                // Navigation vers calendrier equipe1
+                var fragment: Fragment = CalendrierFragment()
+                val fragmentManager = supportFragmentManager
+                fragmentManager.beginTransaction().replace(R.id.frame_layout, fragment).commit()
             }
         }
 

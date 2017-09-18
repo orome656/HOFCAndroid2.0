@@ -1,6 +1,7 @@
 package com.hofc.hofc.viewmodels
 
 import android.arch.lifecycle.LiveData
+import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 import com.hofc.hofc.database.MatchDao
 import com.hofc.hofc.models.Match
@@ -14,12 +15,16 @@ class CalendrierViewModel: ViewModel{
 
     private var matchRepository: MatchRepository
 
+    val teams = MutableLiveData<List<String>>();
+    private val TEAM_LIST = arrayListOf<String>("equipe1", "equipe2", "equipe3")
+
     constructor(): super() {
         matchRepository = MatchRepository()
     }
 
-    fun getTeams(): LiveData<List<String>> {
-        return matchRepository.getTeamsForSeason(SeasonUtil.getCurrentSeasonIndex())
+    fun getTeams() {
+        //return matchRepository.getTeamsForSeason(SeasonUtil.getCurrentSeasonIndex())
+        this.teams.value = this.TEAM_LIST
     }
 
     fun getMatchsForTeam(team: String): LiveData<List<Match>> {
