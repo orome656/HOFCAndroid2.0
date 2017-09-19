@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.hofc.hofc.R
 import com.hofc.hofc.adapters.ActuAdapter
+import com.hofc.hofc.adapters.CalendrierAdapter
 import com.hofc.hofc.callbacks.ActuClickCallback
 import com.hofc.hofc.databinding.ActusListBinding
 import com.hofc.hofc.databinding.CalendarFragmentBinding
@@ -29,6 +30,8 @@ class CalendrierFragment : LifecycleFragment() {
 
     private var mBinding: CalendarFragmentBinding? = null
 
+    private var calendrierAdapter: CalendrierAdapter? = null
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         calendrierViewModel = ViewModelProviders.of(this).get(CalendrierViewModel::class.java)
@@ -38,6 +41,9 @@ class CalendrierFragment : LifecycleFragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.calendar_fragment, container, false)
+
+        calendrierAdapter = CalendrierAdapter()
+        mBinding!!.calendarList.adapter = calendrierAdapter
 
         mBinding!!.tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
@@ -56,6 +62,7 @@ class CalendrierFragment : LifecycleFragment() {
         viewModel.matchs.observe(this, Observer<List<Match>> {
             if(it != null) {
                 mBinding?.isLoading = false
+                calendrierAdapter?.matchList = it
             } else {
                 mBinding?.isLoading = true
             }
